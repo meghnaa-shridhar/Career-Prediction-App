@@ -11,6 +11,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Results extends AppCompatActivity {
     private resultslib mResultsLibrary = new resultslib();
@@ -31,6 +35,8 @@ public class Results extends AppCompatActivity {
     int CulinaryOptions[] = {8,38,23,60};
     int TechnologyOptions[] = {33,48,14,28,57};
     int EngineeringOptions[] = {3,4,13,18,19,43,48};
+    int descending[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14};
+    int temp;
     ArrayList<Integer> contain = new ArrayList<>();
 
     ArrayList<Float> total = new ArrayList<Float>();
@@ -78,7 +84,7 @@ public class Results extends AppCompatActivity {
             }
            float healthcaretotal = (healthcareveryinterested*4 + healthcareinterested*3 + healthcareslightlyinterested*2 + healthcarenotinterested*1);
             healthcareinterestpercentage = (healthcaretotal/20)*100;
-            total.add(healthcareinterestpercentage);
+            total.add(0,healthcareinterestpercentage);
 
         }
 
@@ -107,7 +113,7 @@ public class Results extends AppCompatActivity {
             }
             float sciencetotal = (scienceveryinterested*4 + scienceinterested*3 + scienceslightlyinterested*2 + sciencenotinterested *1);
             scienceinterestPercentage = (sciencetotal/16)*100;
-            total.add(scienceinterestPercentage);
+            total.add(1,scienceinterestPercentage);
         }
 
         if(contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(8)))) &&  contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(23)))) && contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(38)))) && contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(60)))))
@@ -135,7 +141,7 @@ public class Results extends AppCompatActivity {
             }
             float culinarytotal = (culinaryveryinterested*4 + culinaryinterested*3 + culinaryslightlyinterested*2 + culinarynotinterested *1);
             culinaryinterestPercentage = (culinarytotal/16)*100;
-            total.add(culinaryinterestPercentage);
+            total.add(2,culinaryinterestPercentage);
 
         }
 
@@ -165,7 +171,7 @@ public class Results extends AppCompatActivity {
             }
             float financetotal = (financeveryinterested*4 + financeinterested*3 + financeslightlyinterested*2 + financenotinterested *1);
             financeinterestPercentage = (financetotal/16)*100;
-            total.add(financeinterestPercentage);
+            total.add(3,financeinterestPercentage);
         }
 
         if(contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(33)))) && contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(48)))) && contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(14)))) && contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(28)))) && contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(57)))))
@@ -193,7 +199,7 @@ public class Results extends AppCompatActivity {
             }
             float technologytotal = (technologyveryinterested*4 + technologyinterested*3 + technologyslightlyinterested*2 + technologynotinterested *1);
             technologyinterestPercentage = (technologytotal/20)*100;
-            total.add(technologyinterestPercentage);
+            total.add(4,technologyinterestPercentage);
 
         }
 
@@ -223,7 +229,7 @@ public class Results extends AppCompatActivity {
             }
             float educationtotal = (educationveryinterested*4 + educationinterested*3 + educationslightlyinterested*2 + educationnotinterested *1);
             educationinterestPercentage = (educationtotal/12)*100;
-            total.add(educationinterestPercentage);
+            total.add(5,educationinterestPercentage);
 
         }
 
@@ -253,7 +259,7 @@ public class Results extends AppCompatActivity {
             }
             float communicationtotal = (communicationveryinterested*4 + communicationinterested*3 + communicationslightlyinterested*2 + communicationnotinterested *1);
             communicationinterestPercentage = (communicationtotal/8)*100;
-            total.add(communicationinterestPercentage);
+            total.add(6,communicationinterestPercentage);
 
         }
 
@@ -282,7 +288,7 @@ public class Results extends AppCompatActivity {
             }
             float businesstotal = (businessveryinterested*4 + businessinterested*3 + businessslightlyinterested*2 + businessnotinterested *1);
             businessinterestPercentage = (businesstotal/20)*100;
-            total.add(businessinterestPercentage);
+            total.add(7,businessinterestPercentage);
         }
 
 
@@ -311,7 +317,7 @@ public class Results extends AppCompatActivity {
             }
             float multimediatotal = (multimediaveryinterested*4 + multimediainterested*3 + multimediaslightlyinterested*2 + multimedianotinterested *1);
             multimediainterestPercentage = (multimediatotal/12)*100;
-            total.add(multimediainterestPercentage);
+            total.add(8,multimediainterestPercentage);
 
         }
 
@@ -341,7 +347,7 @@ public class Results extends AppCompatActivity {
             }
             float legaltotal = (legalveryinterested*4 + legalinterested*3 + legalslightlyinterested*2 + legalnotinterested *1);
             legalinterestPercentage = (legaltotal/16)*100;
-            total.add(legalinterestPercentage);
+            total.add(9,legalinterestPercentage);
         }
 
         if(contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(7)))) &&  contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(37)))) && contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(52)))) && contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(34)))))
@@ -369,7 +375,7 @@ public class Results extends AppCompatActivity {
             }
             float artstotal = (artsveryinterested*4 + artsinterested*3 + artsslightlyinterested*2 + artsnotinterested *1);
             artsinterestPercentage = (artstotal/16)*100;
-            total.add(artsinterestPercentage);
+            total.add(10,artsinterestPercentage);
         }
 
         if(contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(6)))) && contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(15)))) && contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(51)))) && contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(35)))))
@@ -397,7 +403,7 @@ public class Results extends AppCompatActivity {
             }
             float publicservicetotal = (publicserviceveryinterested*4 + publicserviceinterested*3 + publicserviceslightlyinterested*2 + publicservicenotinterested *1);
             publicserviceinterestPercentage = (publicservicetotal/16)*100;
-            total.add(publicserviceinterestPercentage);
+            total.add(11,publicserviceinterestPercentage);
         }
 
         if(contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(55)))) &&  contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(26)))) && contain.contains(Integer.parseInt(String.valueOf(mQuestionChoice.get(41)))))
@@ -425,7 +431,7 @@ public class Results extends AppCompatActivity {
             }
             float socialsciencetotal = (socialscienceveryinterested*4 + socialscienceinterested*3 + socialscienceslightlyinterested*2 + socialsciencenotinterested*1);
             socialscienceinterestPercentage = (socialsciencetotal/12)*100;
-            total.add(socialscienceinterestPercentage);
+            total.add(12,socialscienceinterestPercentage);
 
         }
 
@@ -454,7 +460,7 @@ public class Results extends AppCompatActivity {
             }
             float engineeringtotal = (engineeringveryinterested*4 + engineeringinterested*3 + engineeringslightlyinterested*2 + engineeringnotinterested *1);
             engineeringinterestPercentage = (engineeringtotal/28)*100;
-            total.add(engineeringinterestPercentage);
+            total.add(13,engineeringinterestPercentage);
 
         }
 
@@ -483,12 +489,27 @@ public class Results extends AppCompatActivity {
             }
              float tradetotal = (tradevocationsveryinterested*4 + tradevocationsinterested*3 + tradevocationsslightlyinterested*2 + tradevocationsnotinterested *1);
              tradevocationsinterestPercentage = (tradetotal/8)*100;
-             total.add(tradevocationsinterestPercentage);
+             total.add(14,tradevocationsinterestPercentage);
         }
 
 
+        for(int i=0;i<15;i++)
+        {
+            for(int j=i+1;j<15;j++)
+            {
+                if(total.get(i) < total.get(j))
+                {
+                    temp = descending[i];
+                    descending[i]=descending[j];
+                    descending[j]=temp;
+                }
+            }
+        }
+
+        Collections.sort(total,Collections.reverseOrder());
+
         for(int i=0; i < total.size(); i++){
-            resultContent.setText(resultContent.getText() + getResources().getString(R.string.interestpercentage) + total.get(i) + getResources().getString(R.string.percentage) +"\n" +mResultsLibrary.getDescription(i)+ "\n");
+            resultContent.setText(resultContent.getText() + getResources().getString(R.string.interestpercentage) + total.get(i) + getResources().getString(R.string.percentage) +"\n" +mResultsLibrary.getDescription(descending[i])+ "\n");
         }
     }
 }
